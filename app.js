@@ -9,14 +9,14 @@ let activeRequests = 0;
 let lastFocus = null;
 
 const $ = (selector) => document.querySelector(selector);
-const escapeHTML = (value) => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const escapeHTML = (value) => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const safeLink = (value) => { try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? url.href : ''; } catch { return ''; } };
 const defaultProfile = {
   name: 'Pushparaj Abhijeet Supekar', shortName: 'Pushparaj', role: 'Full-Stack Python Developer · AI / Data Science', location: 'Your location',
   availability: 'Open to opportunities', headline: 'I turn complex ideas into things that work.',
   intro: 'Write your own introduction in site-data.json.', about: 'Tell visitors about what you do and why.',
   email: 'your.email@example.com', linkedin: '', github: '', resumeUrl: '',
-  skills: ['Python','Full-Stack Development','AI','Data Science'], focusAreas: [], projects: []
+  skills: ['Python', 'Full-Stack Development', 'AI', 'Data Science'], focusAreas: [], projects: []
 };
 
 const visuals = {
@@ -44,18 +44,24 @@ function applyProfile(data) {
   $('#year').textContent = new Date().getFullYear();
   const email = profile.email || defaultProfile.email;
   $('#contact-email').textContent = `${email} ↗`;
-  $('#contact-email').href = email === defaultProfile.email ? '#contact' : `mailto:${encodeURIComponent(email).replace('%40','@')}`;
-  if (email === defaultProfile.email) { $('#contact-email').setAttribute('aria-disabled','true'); $('#contact-email').title = 'Add your real email in site-data.json'; $('#contact-email').addEventListener('click', e => e.preventDefault()); }
+  $('#contact-email').href = email === defaultProfile.email ? '#contact' : `mailto:${encodeURIComponent(email).replace('%40', '@')}`;
+  if (email === defaultProfile.email) { $('#contact-email').setAttribute('aria-disabled', 'true'); $('#contact-email').title = 'Add your real email in site-data.json'; $('#contact-email').addEventListener('click', e => e.preventDefault()); }
   [['linkedin-link', profile.linkedin], ['github-link', profile.github], ['resume-link', profile.resumeUrl]].forEach(([id, url]) => {
     const element = $('#' + id); const href = safeLink(url);
     if (href) { element.href = href; element.target = '_blank'; element.rel = 'noopener noreferrer'; element.removeAttribute('aria-disabled'); }
     else { element.href = '#contact'; element.setAttribute('aria-disabled', 'true'); element.title = 'Add this link in site-data.json'; element.addEventListener('click', e => e.preventDefault()); }
   });
-  $('#focus-grid').innerHTML = profile.focusAreas.map((item, i) => `<article class="expertise-card reveal"><span class="expertise-card-number">0${i+1}</span><span class="expertise-card-icon">${escapeHTML(item.icon)}</span><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.description)}</p></article>`).join('');
+  $('#focus-grid').innerHTML = profile.focusAreas.map(item => `
+  <article class="expertise-card reveal">
+    <span class="expertise-card-icon">${escapeHTML(item.icon)}</span>
+    <h3>${escapeHTML(item.title)}</h3>
+    <p>${escapeHTML(item.description)}</p>
+  </article>
+`).join('');
   $('#skills-list').innerHTML = profile.skills.map(skill => `<span class="skill-chip">${escapeHTML(skill)}</span>`).join('');
   $('#projects-list').innerHTML = profile.projects.map(project => {
     const href = safeLink(project.link);
-    return `<article class="project-card reveal"><div class="project-visual ${['automation','design','data','code','ai'].includes(project.visual) ? project.visual : 'automation'}"><div class="visual-grid"></div><div class="project-graphic">${visuals[project.visual] || visuals.automation}</div><span class="visual-corner">PROJECT / ${escapeHTML(project.number)}</span><span class="visual-bottom">INNOVATE THROUGH ITERATION //</span></div><div class="project-info"><span class="project-kicker">${escapeHTML(project.category)}</span><h3>${escapeHTML(project.title)}</h3><p>${escapeHTML(project.description)}</p><div class="project-tags">${(project.tags||[]).map(tag => `<span>${escapeHTML(tag)}</span>`).join('')}</div>${href ? `<a class="project-link" href="${escapeHTML(href)}" target="_blank" rel="noopener noreferrer">View project ↗</a>` : ''}</div></article>`;
+    return `<article class="project-card reveal"><div class="project-visual ${['automation', 'design', 'data', 'code', 'ai'].includes(project.visual) ? project.visual : 'automation'}"><div class="visual-grid"></div><div class="project-graphic">${visuals[project.visual] || visuals.automation}</div><span class="visual-corner">PROJECT / ${escapeHTML(project.number)}</span><span class="visual-bottom">INNOVATE THROUGH ITERATION //</span></div><div class="project-info"><span class="project-kicker">${escapeHTML(project.category)}</span><h3>${escapeHTML(project.title)}</h3><p>${escapeHTML(project.description)}</p><div class="project-tags">${(project.tags || []).map(tag => `<span>${escapeHTML(tag)}</span>`).join('')}</div>${href ? `<a class="project-link" href="${escapeHTML(href)}" target="_blank" rel="noopener noreferrer">View project ↗</a>` : ''}</div></article>`;
   }).join('');
   const sampleCount = profile.projects.filter(p => /sample/i.test(p.category)).length;
   $('.projects-footnote').style.display = sampleCount ? 'flex' : 'none';
@@ -122,7 +128,7 @@ async function askAssistant(question) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 25000);
     try {
-      const result = await fetch('/api/chat', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({message: question}), signal: controller.signal });
+      const result = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: question }), signal: controller.signal });
       if (!result.ok) throw new Error(`Server returned ${result.status}`);
       const payload = await result.json();
       if (!payload.reply) throw new Error('Empty reply');
@@ -148,14 +154,14 @@ async function initialize() {
   } catch { aiReady = false; }
   $('#assistant-mode').textContent = aiReady ? 'Live AI assistant online' : 'Demo assistant online';
   $('#chat-disclaimer').textContent = aiReady ? 'AI answers can make mistakes. Confirm important details.' : 'Demo responses until an AI API key is configured.';
-  ['#nav-ai','#hero-ai','#feature-ai','#floating-ai'].forEach(id => $(id).addEventListener('click', openChat));
+  ['#nav-ai', '#hero-ai', '#feature-ai', '#floating-ai'].forEach(id => $(id).addEventListener('click', openChat));
   $('#chat-close').addEventListener('click', closeChat);
   $('#chat-overlay').addEventListener('click', closeChat);
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && $('#chat-panel').classList.contains('open')) closeChat();
     if (event.key === 'Tab' && $('#chat-panel').classList.contains('open')) {
       const focusables = [...$('#chat-panel').querySelectorAll('button:not(:disabled),input')];
-      const first = focusables[0], last = focusables[focusables.length-1];
+      const first = focusables[0], last = focusables[focusables.length - 1];
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     }
@@ -166,7 +172,7 @@ async function initialize() {
   menu.addEventListener('click', () => { const next = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(next)); $('#mobile-nav').hidden = !next; menu.setAttribute('aria-label', next ? 'Close menu' : 'Open menu'); });
   $('#mobile-nav').addEventListener('click', e => { if (e.target.closest('a')) { $('#mobile-nav').hidden = true; menu.setAttribute('aria-expanded', 'false'); } });
   const progress = $('#scroll-progress');
-  window.addEventListener('scroll', () => { const max = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = `${max > 0 ? window.scrollY/max*100 : 0}%`; }, { passive: true });
+  window.addEventListener('scroll', () => { const max = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = `${max > 0 ? window.scrollY / max * 100 : 0}%`; }, { passive: true });
   if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches) {
     const glow = $('#cursor-glow'); document.addEventListener('pointermove', e => { glow.style.left = `${e.clientX}px`; glow.style.top = `${e.clientY}px`; }, { passive: true });
   } else $('#cursor-glow').style.display = 'none';
