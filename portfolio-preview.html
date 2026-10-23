@@ -2545,7 +2545,7 @@
         if (href) { element.href = href; element.target = '_blank'; element.rel = 'noopener noreferrer'; element.removeAttribute('aria-disabled'); }
         else { element.href = '#contact'; element.setAttribute('aria-disabled', 'true'); element.title = 'Add this link in site-data.json'; element.addEventListener('click', e => e.preventDefault()); }
       });
-      $('#focus-grid').innerHTML = profile.focusAreas.map((item, i) => `<article class="expertise-card reveal"><span class="expertise-card-number">0${i + 1}</span><span class="expertise-card-icon">${escapeHTML(item.icon)}</span><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.description)}</p></article>`).join('');
+      $('#focus-grid').innerHTML = profile.focusAreas.map((item, i) => `<article class="expertise-card reveal"><span class="expertise-card-number"></span><span class="expertise-card-icon">${escapeHTML(item.icon)}</span><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.description)}</p></article>`).join('');
       $('#skills-list').innerHTML = profile.skills.map(skill => `<span class="skill-chip">${escapeHTML(skill)}</span>`).join('');
       $('#projects-list').innerHTML = profile.projects.map(project => {
         const href = safeLink(project.link);
