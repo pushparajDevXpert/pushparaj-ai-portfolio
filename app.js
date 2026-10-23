@@ -46,7 +46,7 @@ function applyProfile(data) {
   $('#contact-email').textContent = `${email} ↗`;
   $('#contact-email').href = email === defaultProfile.email ? '#contact' : `mailto:${encodeURIComponent(email).replace('%40', '@')}`;
   if (email === defaultProfile.email) { $('#contact-email').setAttribute('aria-disabled', 'true'); $('#contact-email').title = 'Add your real email in site-data.json'; $('#contact-email').addEventListener('click', e => e.preventDefault()); }
-  [['linkedin-link', profile.linkedin], ['github-link', profile.github], ['resume-link', profile.resumeUrl]].forEach(([id, url]) => {
+  [['linkedin-link', profile.linkedin], ['github-link', profile.github]].forEach(([id, url]) => {
     const element = $('#' + id); const href = safeLink(url);
     if (href) { element.href = href; element.target = '_blank'; element.rel = 'noopener noreferrer'; element.removeAttribute('aria-disabled'); }
     else { element.href = '#contact'; element.setAttribute('aria-disabled', 'true'); element.title = 'Add this link in site-data.json'; element.addEventListener('click', e => e.preventDefault()); }

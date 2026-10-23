@@ -2253,3 +2253,56 @@ input:focus-visible {
         animation: none !important
     }
 }
+
+
+/* Resume Dropdown */
+
+.resume-menu {
+    position: relative;
+}
+
+.resume-menu summary {
+    list-style: none;
+    cursor: pointer;
+    color: #e8eef7;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.resume-menu summary::-webkit-details-marker {
+    display: none;
+}
+
+.resume-menu summary:hover {
+    color: #aaf5e9;
+}
+
+.resume-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    min-width: 205px;
+    padding: 8px;
+    background: #101d30;
+    border: 1px solid #32505a;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    z-index: 100;
+}
+
+.social-links .resume-dropdown a {
+    display: block;
+    padding: 12px 14px;
+    color: #e8eef7;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.social-links .resume-dropdown a:hover {
+    background: #193a40;
+    color: #aaf5e9;
+}
