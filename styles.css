@@ -2265,7 +2265,7 @@ input:focus-visible {
     list-style: none;
     cursor: pointer;
     color: #e8eef7;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 600;
     transition: color 0.3s ease;
 }
