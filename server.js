@@ -29,6 +29,11 @@ const PROVIDER = GEMINI_KEY ? 'gemini' : OPENAI_KEY ? 'openai' : 'demo';
 const profile = JSON.parse(fs.readFileSync(path.join(ROOT, 'site-data.json'), 'utf8'));
 const allowedFiles = new Set(['/','/index.html','/styles.css','/app.js','/site-data.json','/favicon.svg']);
 const mime = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml'};
+// Allow visitors to view and download resume
+allowedFiles.add('/resume.pdf');
+
+// Tell browsers to display PDF correctly
+mime['.pdf'] = 'application/pdf';
 const recent = new Map();
 
 function send(res, status, body, contentType='application/json; charset=utf-8') {
