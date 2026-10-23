@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060b18"/>
+  <meta name="description"
+    content="Pushparaj Abhijeet Supekar · Full-Stack Python Developer focused on AI & Data Science. Explore example projects, technology stack, and an interactive portfolio assistant.">
+  <title>Pushparaj | Full-Stack Python Developer + AI & Data Science</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+  <div class="progress-bar" id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="Back to top"><span class="brand-symbol">P<span
+            class="brand-star">✳</span></span><span class="brand-text" id="brand-name">PUSHPARAJ<span
+            class="brand-dot">.</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-ai" id="nav-ai" type="button"><span class="pulse-light"></span> Ask my AI <span
+            aria-hidden="true"></span></button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobile-nav" type="button"><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#about">About</a><a
+        href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-topline"><span class="eyebrow"><span class="mini-cross">✳</span> PYTHON × WEB ×
+          INTELLIGENCE</span></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="availability"><span class="availability-dot"></span><span id="availability-text">Open to
+              interesting opportunities</span></div>
+          <h1 id="hero-title">Code.<br><span class="text-gradient">Learn.</span> <span
+              class="outlined-word">Ship.</span></h1>
+          <p class="hero-subtitle"><span class="hero-role" id="hero-role">Full-Stack Python Developer</span> <span
+              class="hero-divider">/</span> AI + Data Science</p>
+          <p class="hero-description" id="hero-description">I build at the intersection of Python, web development, and
+            intelligent systems. Discover my focus and example projects.</p>
+          <div class="hero-ctas"><a class="button button-primary" href="#projects">Explore my work
+              <span>↗</span></a><button class="button button-secondary" id="hero-ai" type="button"><span>✳</span> Talk
+              to my AI</button></div>
+        </div>
+        <div class="hero-art" aria-label="Animated AI network with an illustrative Python code terminal" role="img">
+          <div class="orbit-glow"></div>
+          <div class="orbit orbit-outer"><i></i><i></i></div>
+          <div class="orbit orbit-middle"><i></i></div>
+          <div class="orbit orbit-inner"></div>
+          <div class="orb-core">
+            <div class="orb-shine"></div>
+            <div class="orb-lines"></div><span>⌘</span>
+          </div>
+          <div class="orbit-label label-one"><span class="label-point"></span> PYTHON</div>
+          <div class="orbit-label label-two"><span class="label-point"></span> AI / ML</div>
+          <div class="orbit-label label-three"><span class="label-point"></span> FULL STACK</div>
+          <div class="axis axis-horizontal"></div>
+          <div class="axis axis-vertical"></div>
+          <div class="art-corner art-corner-tl">[ DEV:001 ]</div>
+          <div class="art-corner art-corner-br">PYTHON / ACTIVE</div>
+          <div class="hero-terminal" aria-hidden="true">
+            <div class="terminal-top"><span class="terminal-dots">● ● ●</span><span>main.py</span><span>⌁</span></div>
+            <div class="terminal-body"><span class="code-purple">from</span> ideas <span
+                class="code-purple">import</span> impact<br><span class="code-mint">def</span> <span
+                class="code-white">build_future</span>():<br><span class="code-indent">return</span> <span
+                class="code-orange">"intelligence"</span><span class="terminal-cursor">▍</span></div>
+          </div>
+        </div>
+      </div>
+     
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee"><span>REACTJS DEVELOPER</span>
+        <b>✳</b><span>FULL-STACK PYTHON DEVELOPMENT</span>
+        <b>✳</b><span>MERN STACK DEVELOPER</span>
+        <b>✳</b><span>AI / MACHINE LEARNING</span>
+        <b>✳</b><span>DATA SCIENCE</span><b>✳</b></div>
+    </div>
+<!-- About me section -->
+    <section class="section about-section shell" id="about" aria-labelledby="about-title">
+      
+      <div class="about-grid">
+        <div class="about-title-block reveal">
+          <h2 id="about-title">Powered by Python.<br><span>Driven by ideas.</span></h2>
+          <div class="about-decoration" aria-hidden="true"><span>✳</span><span>◌</span></div>
+        </div>
+        <div class="about-copy reveal"><span class="orange-line"></span>
+          <p class="lead" id="about-intro">I build at the intersection of full-stack Python development, AI, and Data
+            Science.</p>
+          <p id="about-body">My interests span backend systems, user interfaces, machine learning, and actionable data.
+          </p>
+          <div class="about-location"><span class="status-square"></span><span>BASED IN <strong
+                id="location">INDIA</strong></span><span class="about-id">/ 001</span></div>
+        </div>
+      </div>
+    </section>
+<!-- WHAT I DO SECTION -->
+    <section class="section expertise-section" id="expertise" aria-labelledby="expertise-title">
+      <div class="shell">
+        <div class="expertise-head reveal">
+          <h2 id="expertise-title">From frontend<br><em>to intelligent backend.</em></h2>
+        </div>
+        <div class="expertise-grid" id="focus-grid"></div>
+        <div class="stack-flow reveal" aria-label="Example AI application architecture">
+          <div class="stack-flow-heading"><span>AN EXAMPLE APP ARCHITECTURE</span><span>UI → API → INTELLIGENCE →
+              DATA</span></div>
+          <div class="stack-flow-steps">
+            <div><small>FRONTEND</small><strong>React UI</strong></div><span class="flow-arrow">→</span>
+            <div><small>BACKEND</small><strong>Python API</strong></div><span class="flow-arrow">→</span>
+            <div><small> AI</small><strong>ML · LLM</strong></div><span class="flow-arrow">→</span>
+            <div><small> STORAGE</small><strong>SQL · Data</strong></div>
+          </div>
+        </div>
+        <div class="skills-line reveal"><span>TECHNOLOGY'S I KNOW </span>
+          <div class="skill-chips" id="skills-list"></div>
+        </div>
+      </div>
+    </section>
+<!-- projects  -->
+    <section class="section projects-section shell" id="projects" aria-labelledby="projects-title">
+      <div class="projects-intro reveal">
+        <h2 id="projects-title">Ideas in<br><span class="text-gradient">motion.</span></h2>
+        <p>Sample concepts for full-stack Python, AI, and data work. Replace these with projects I actually built,
+          including links and measurable results.</p>
+      </div>
+      <div class="project-list" id="projects-list"></div>
+      <div class="projects-footnote reveal"></div>
+    </section>
+<!-- intro to ai -->
+    <section class="ai-feature" aria-labelledby="feature-title">
+      <div class="shell ai-feature-grid">
+        <div class="ai-feature-left reveal">
+          <h2 id="feature-title">Don't just read<br>my portfolio.<br><span class="text-gradient">Ask it.</span></h2>
+          <p>Meet the portfolio assistant: ask about my Python focus, web stack, AI interests, and sample project
+            concepts. Enable live answers with a private API key.</p><button class="button button-primary" type="button"
+            id="feature-ai">Launch assistant <span>↗</span></button>
+        </div>
+        <div class="ai-feature-right reveal">
+          <div class="chat-preview">
+            <div class="preview-head">
+              <div class="preview-avatar">✳</div>
+              <div><strong>Portfolio AI</strong><small><span class="preview-live"></span> READY TO CHAT</small></div>
+              <span class="preview-spark">✳</span>
+            </div>
+            <div class="preview-message visitor">What do you build with Python?</div>
+            <div class="preview-message assistant">I'm <span id="preview-name">Pushparaj</span>'s portfolio guide.
+              Explore Python development, AI, Data Science, and project concepts! <span>✳</span></div>
+            <div class="preview-input">Ask me anything... <span>↗</span></div>
+          </div>
+          <div class="preview-border-deco">POWERED BY CURIOSITY <span>● ● ●</span></div>
+        </div>
+      </div>
+    </section>
+<!-- Contact section -->
+    <section class="contact-section shell" id="contact" aria-labelledby="contact-title">
+      <div class="contact-content reveal"><span class="contact-kicker"><span class="availability-dot"></span> LET'S
+          START A CONVERSATION</span>
+        <h2 id="contact-title">Have an idea?<br><em>Let's build it.</em></h2>
+        <div class="contact-row"><a class="contact-email" id="contact-email"
+            href="mailto:your.email@example.com">your.email@example.com <span>↗</span></a>
+          <div class="social-links"><a id="linkedin-link" href="#contact" aria-label="LinkedIn profile">LINKEDIN ↗</a><a
+              id="github-link" href="#contact" aria-label="GitHub profile">GITHUB ↗</a><a id="resume-link"
+              href="#contact" aria-label="Resume">RESUME ↗</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div class="footer-top"><a class="brand" href="#top"><span class="brand-symbol">P<span
+            class="brand-star">✳</span></span><span class="brand-text">PUSHPARAJ<span
+            class="brand-dot">.</span></span></a><a href="#top" class="back-to-top">BACK TO TOP ↑</a></div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> <span id="footer-name">Pushparaj</span>. Crafted with
+        curiosity.</span><span>BUILT WITH PYTHON + IMAGINATION ✳</span></div>
+  </footer>
+
+  <button type="button" class="floating-ai" id="floating-ai" aria-label="Open portfolio AI chat"><span
+      class="floating-ai-icon">✳</span><span class="floating-ai-label">ASK MY AI</span><span
+      class="float-online"></span></button>
+  <div class="chat-overlay" id="chat-overlay" hidden></div>
+  <aside class="chat-panel" id="chat-panel" role="dialog" aria-modal="true" aria-labelledby="chat-title"
+    aria-hidden="true" inert>
+    <div class="chat-header">
+      <div class="chat-header-avatar">✳</div>
+      <div class="chat-header-name"><strong id="chat-title">Portfolio AI</strong>
+        <small>
+          <span
+            class="chat-dot">
+          </span>
+          <span id="assistant-mode"></span>
+          </small>
+        </div>
+        <button class="chat-close" id="chat-close" type="button" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages" aria-live="polite">
+      <div class="message bot"><span class="message-avatar">✳</span>
+        <div class="message-text">Hey there! 👋 I'm the Pushparaj Supekar. Ask me about skills, projects, or how to get in touch.</div>
+      </div>
+    </div>
+    <div class="suggested-questions" id="suggested-questions"><button type="button"
+        data-question="What Python web technologies are featured?">Python stack ✳</button><button type="button"
+        data-question="Tell me about your AI and data science focus">AI & Data ↗</button><button type="button"
+        data-question="Which projects are samples?">Projects ↗</button></div>
+    <form class="chat-form" id="chat-form"><label class="sr-only" for="chat-input">Message the portfolio
+        assistant</label><input id="chat-input" autocomplete="off" maxlength="500"
+        placeholder="Ask anything about this portfolio..." required><button type="submit" id="chat-send"
+        aria-label="Send message"><i class="fa-regular fa-paper-plane"></i></button></form>
+    <div class="chat-disclaimer" id="chat-disclaimer"></div>
+  </aside>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+{
+  "name": "Pushparaj Abhijeet Supekar",
+  "shortName": "Pushparaj",
+  "role": "Full-Stack Python Developer · AI / Data Science",
+  "headline": "I connect Python backends, modern web experiences, and data-driven intelligence to build useful digital products.",
+  "location": "India",
+  "availability": "Open to developer & AI opportunities",
+  "intro": "I’m Pushparaj — a Full-Stack Python Developer interested in AI, machine learning, and Data Science. I like transforming ideas into real-world web experiences, from the logic behind the API to the details people see on screen.",
+  "about": "My focus is where software engineering meets intelligent systems: clean Python services, responsive interfaces, meaningful data, and applied AI. The stack and example projects below are customizable, so the final portfolio can match my verified tools, experience, and results.",
+  "email": "pushparajs7568r@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/pushparaj-supekar/?isSelfProfile=true",
+  "github": "https://github.com/pushparajDevXpert",
+  "resumeUrl": "",
+  "focusAreas": [
+    {
+      "icon": "{ }",
+      "title": "Full-Stack Web Apps",
+      "description": "Interface-to-database workflows. Example stack: React, JavaScript, HTML/CSS, and Python web frameworks."
+    },
+    {
+      "icon": "⌁",
+      "title": "Python APIs & Backends",
+      "description": "REST APIs, business logic, authentication, and data services with FastAPI or Django."
+    },
+    {
+      "icon": "✳",
+      "title": "Applied AI & Machine Learning",
+      "description": "Explore ML pipelines, NLP, retrieval-augmented generation, and AI features that solve practical problems."
+    },
+    {
+      "icon": "▥",
+      "title": "Data Science & Analytics",
+      "description": "From SQL and Pandas to exploratory analysis, data visualization, and insights people can act on."
+    }
+  ],
+  "skills": [
+    "Python",
+    "FastAPI",
+    "Django",
+    "REST APIs",
+    "JavaScript",
+    "React",
+    "HTML / CSS",
+    "SQL",
+    "Git / GitHub",
+    "Pandas",
+    "NumPy",
+    "scikit-learn",
+    "Machine Learning",
+    "LLM Apps",
+    "RAG",
+    "Data Visualization",
+    "Streamlit",
+    "Docker"
+  ],
+  "projects": [
+    {
+      "number": "01",
+      "category": "SAMPLE PROJECT · AI APPLICATION",
+      "title": "AI Knowledge Assistant",
+      "description": "Example concept: a full-stack document Q&A app that combines a React interface, a Python API, retrieval, and grounded AI responses. Replace with your real architecture, repository, and demo.",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "React",
+        "RAG"
+      ],
+      "link": "",
+      "visual": "ai"
+    },
+    {
+      "number": "02",
+      "category": "SAMPLE PROJECT · FULL STACK",
+      "title": "Modern Python Web Platform",
+      "description": "Example concept: an interactive application with login, a responsive frontend, REST endpoints, and SQL-backed data. Show the features and deployment details from an app you actually shipped.",
+      "tags": [
+        "Django",
+        "React",
+        "PostgreSQL",
+        "REST"
+      ],
+      "link": "",
+      "visual": "code"
+    },
+    {
+      "number": "03",
+      "category": "SAMPLE PROJECT · DATA SCIENCE",
+      "title": "Interactive Data Insights",
+      "description": "Example concept: clean raw datasets, explore patterns, and present findings in a shareable dashboard. Replace with the dataset, analytical methods, and real insights from your work.",
+      "tags": [
+        "Pandas",
+        "SQL",
+        "Plotly",
+        "Streamlit"
+      ],
+      "link": "",
+      "visual": "data"
+    },
+    {
+      "number": "04",
+      "category": "SAMPLE PROJECT · MACHINE LEARNING",
+      "title": "Prediction Model Pipeline",
+      "description": "Example concept: an end-to-end ML workflow for preprocessing, training, evaluation, and serving predictions through an API. Add real metrics only after testing a real model.",
+      "tags": [
+        "Python",
+        "scikit-learn",
+        "ML",
+        "API"
+      ],
+      "link": "",
+      "visual": "automation"
+    }
+  ],
+  "factsForAssistant": [
+    "Pushparaj identifies as a full-stack Python developer working with AI and Data Science.",
+    "This portfolio is a customized starter profile; technology chips indicate an example stack to verify and edit.",
+    "All cards labeled SAMPLE PROJECT are illustrative concepts, not verified completed projects.",
+    "No completed projects, employment history, certifications, personal email, or social profiles have been provided.",
+    "Do not claim that sample projects or technologies are verified past experience.",
+    "Visitors can use the contact section after Pushparaj provides actual contact links."
+  ]
+}
